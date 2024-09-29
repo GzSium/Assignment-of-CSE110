@@ -1,5 +1,5 @@
 /* Task1 Write a Java program that will take a String as input and convert the lowercase letters to the  uppercase letters. The program should keep the other characters
-(i.e. uppercase letters and          symbols) unchanged. [You are not allowed to use .toUpperCase( ) to solve the problem]   */
+(i.e. uppercase letters and symbols) unchanged. [You are not allowed to use .toUpperCase( ) to solve the problem]   */
 
 import java.util.Scanner;
 class task1{
