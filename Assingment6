@@ -1,0 +1,286 @@
+/* Task1 Write a Java program that will take a String as input and convert the lowercase letters to the  uppercase letters. The program should keep the other characters
+(i.e. uppercase letters and          symbols) unchanged. [You are not allowed to use .toUpperCase( ) to solve the problem]   */
+
+import java.util.Scanner;
+class task1{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+       String st = sc.nextLine();
+       String sum ="";
+       for(int i=0;i<st.length();i++){
+          char ch = st.charAt(i);
+          int ch1= (int)ch;
+          if(ch1>=0 && ch<=96){
+              sum = sum + (char)ch1;
+          } 
+          else{
+              int ch2 = ch1-32;
+              sum = sum + (char)ch2;
+          }
+       }
+    System.out.print(sum);
+    }
+}
+
+/* task2  Write a Java program to check if a string is palindrome or not.A string is palindrome if the reverse of the string is the same as the original string.
+[You cannot use any built-in functions other than .equals( ), .charAt( ), .length( )]     */
+class task2{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Given String : ");
+       String st = sc.nextLine();
+      boolean b = true;
+       for(int i=0;i<st.length();i++){
+        if(st.charAt(i) == st.charAt(st.length()-(i+1))){
+          b=true;
+        }
+        else{
+            b=false;
+        }
+       }
+       if(b ==true){
+        System.out.println("true");
+       }
+       else{
+        System.out.println("false");   
+       }
+   
+    }
+}
+
+
+/* Task3  Write a Java program that splits a given string on a given split character. The first input is a String and the second input is the character that will be used to
+split the first String.   */
+
+import java.util.Scanner;
+class task3{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Given String :");
+         String st = sc.nextLine();
+       System.out.println("Given split character :");
+         String ch = sc.nextLine();
+         String sum = "";
+       for(int i=0;i<st.length();i++){
+          char ch1 = st.charAt(i);
+          char ch2 = ch.charAt(0);
+        if(ch1 == ch2){
+            System.out.println(sum);
+            sum="";
+          }
+          else{
+              sum = sum +ch1;
+          }
+       }
+    System.out.print(sum);
+    }
+}
+
+
+//Task4   Write a JAVA program that will take one string input from the user. Then prints the string in reverse.
+
+import java.util.Scanner;
+class task4{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Word to reverse :");
+         String st = sc.nextLine();
+         String rev_st ="";
+        for(int i=0; i<st.length();i++){
+            char ch = st.charAt(i);
+            rev_st = ch + rev_st;
+        }
+        System.out.print(rev_st);
+    }
+}
+
+
+/*Task5 Captain Jack and his crew have discovered a treasure chest full of gold coins. However, the 
+    chest comes with a mysterious lock. To open it, they need to input a phrase that should contain 
+    a combination of characters where vowel count is divisible by 3 and consonant count is 
+    divisible by 5. Write a Java program to help Captain Jack determine if the input phrase has 
+    the correct number of vowels and consonants to unlock the treasure chest.
+    Note: Vowels and Consonants count has to be greater than 0 for the treasure to open  */
+
+import java.util.Scanner;
+class task7{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+        String st = sc.nextLine();
+        int in1 =0;
+          int in2 =0;
+          for(int i=0;i<st.length();i++){
+              char ch = st.charAt(i);
+              if(ch == 'a' || ch == 'e' || ch == 'i'|| ch == 'o' || ch == 'u'){
+                  in1 = in1+1;
+              }
+              else{
+                in2 = in2 +1; 
+              }
+          }
+          if(in1%3 ==0 && in2%5 ==0){
+              System.out.println("Aaarr! Me Plunder!!");
+          }
+          else{
+            System.out.println("Blimey! No Plunder!!");  
+          }
+    }
+}
+
+
+// Task6  Write a Java program that takes a string as input and reverses the order of words in it. CSE110 is easy  ==  easy is CSE110
+
+import java.util.Scanner;
+class task6{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Word to reverse :");
+         String st = sc.nextLine();
+         String sam_st ="";
+         String one_wd ="";
+        for(int i=0; i<st.length();i++){
+            char ch = st.charAt(i);
+            int in = (int)ch;
+            if(in == 32 ){
+                one_wd = sam_st+" " + one_wd ;
+                sam_st="" ;
+            }
+            else{
+                sam_st = sam_st + ch ;
+            }
+        }
+        System.out.print(one_wd);
+    }
+}
+
+
+/* Task7  Write a Java program that takes two strings (lowercase) as user input. Your task is to concat 
+    the two strings except the common characters present in the strings. Then print the modified  
+    string (uppercase). You can assume that each string will only contain unique characters; that 
+    means there will be no duplicate characters in a particular string.   */
+import java.util.Scanner;
+public class Task07{
+     public static void main(String [] args){
+          Scanner sc=new Scanner(System.in);
+          System.out.println("Enter two strings(all lowercases):");
+          String str1=sc.nextLine();
+          String str2=sc.nextLine();
+          String str3="";
+          for(int i=0;i<str1.length();i++){
+               char ch1=str1.charAt(i);
+               boolean found=false;
+               for(int j=0;j<str2.length();j++){
+                    char ch2=str2.charAt(j);
+                    if(ch1==ch2){
+                         found=true;
+                    }
+               }
+               if(found==false){
+                    str3=str3+ch1;
+               }
+          }
+          for(int i=0;i<str2.length();i++){
+               char ch3=str2.charAt(i);
+               boolean found2=false;
+               for(int j=0;j<str1.length();j++){
+                    char ch4=str1.charAt(j);
+                    if(ch3==ch4){
+                         found2=true;
+                    }
+               }
+               if(found2==false){
+                    str3=str3+ch3;
+               }
+          }
+          System.out.println(str3.toUpperCase());
+     }
+
+} 
+
+
+
+/* Task8 . Write a Java program that takes a sentence as user input and displays the sentence in 
+    aLtErNaTiNg CaPs format. Note that, you have to ignore spaces and other punctuations while  
+    altering the characters. Also, your new sentence will always start with lowercase letters.     */
+ 
+import java.util.Scanner;
+class task8{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+        String st = sc.nextLine();
+        String sum = "";
+        for(int i=0;i<st.length();i++){
+            int ch = st.codePointAt(i);
+            if( i == 0){
+                if(ch>=65 && ch<=90){
+                    ch  = ch + 32;
+                    sum = sum + (char)ch;
+                }else{
+                    sum = sum + (char)ch;
+                }
+            }
+            if( i != 0){
+            if(ch>=65 && ch<=90){
+                ch  = ch + 32;
+                sum = sum + (char)ch;
+            }
+            else if(ch>=97 && ch<=122){
+                ch  = ch - 32;
+                sum = sum + (char)ch;
+            }
+            else{
+                sum = sum +(char)ch;
+            }
+            }
+        }
+        System.out.print(sum);
+    }
+}
+
+
+/* Task9    Write a Java program that takes a string as input and determines whether the string qualifies as  a strong password. A strong password is defined by the following criteria:
+
+The password must be at least 8 characters long.
+The password must contain characters at least one - 
+Uppercase letters (A-Z)
+Lowercase letters (a-z)
+Digits (0-9 n)
+Special characters (e.g., !, @, #, $, etc.)
+   Print ‘True’ if the password is strong, and ‘False’ otherwise. You may consider any character 
+   excluding the alphabet, digit, and space as special characters.     */
+
+import java.util.Scanner;
+class task9{
+    public static void main(String [] args){
+       Scanner sc = new Scanner(System.in);
+        String st = sc.nextLine();
+        boolean a = false;
+        boolean b = false;
+        boolean c = false;
+        boolean d = false;
+        boolean e = false;
+    if(st.length()>=8){
+        for(int in=0;in<st.length();in++){
+            char ch = st.charAt(in);
+            if(ch>='a' && ch<='z'){
+                a = true;
+            }
+            if(ch>='A' && ch<='Z'){
+                b = true;
+            }
+            if(ch>='0' && ch<='9'){
+                c = true;
+            }
+            if(ch>='!' && ch<='/' ){
+                d = true;
+            }
+        }
+        if(a && b && c && d == true){
+            System.out.println("True");
+        }
+        else{
+             System.out.println("False");
+        }
+        }
+    }
+    }
