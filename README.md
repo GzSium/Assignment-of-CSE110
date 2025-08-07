@@ -1,1 +1,1 @@
-Assignment of CSE110 course of Brac University
+Lab assignment of CSE110 of Brac University
